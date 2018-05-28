@@ -1,0 +1,31 @@
+###
+# React Native Support – DO NO MODIFY
+###
+rn_path = '../node_modules/react-native' # This path is likely to be `../node_modules/react-native` in your own project.
+
+pod 'RNPredictIO', :path => File.expand_path(File.readlink("#{rn_path}/../react-native-predict-io"))
+
+# See http://facebook.github.io/react-native/docs/integration-with-existing-apps.html#configuring-cocoapods-dependencies
+pod 'yoga', path: "#{rn_path}/ReactCommon/yoga/yoga.podspec"
+pod 'React', path: rn_path, subspecs: [
+  'Core',
+  'CxxBridge',
+  'DevSupport',
+  'RCTActionSheet',
+  'RCTAnimation',
+  'RCTGeolocation',
+  'RCTImage',
+  'RCTLinkingIOS',
+  'RCTNetwork',
+  'RCTSettings',
+  'RCTText',
+  'RCTVibration',
+  'RCTWebSocket',
+]
+# React Native third party dependencies podspecs
+pod 'DoubleConversion', :podspec => "#{rn_path}/third-party-podspecs/DoubleConversion.podspec"
+pod 'GLog', :podspec => "#{rn_path}/third-party-podspecs/glog.podspec"
+pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs/Folly.podspec"
+###
+# React Native Support – END
+###

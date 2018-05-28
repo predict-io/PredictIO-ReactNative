@@ -1,0 +1,4 @@
+rootProject.name = 'Example'
+include ':react-native-predict-io'
+project(':react-native-predict-io').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-predict-io/android')
+include ':app'
