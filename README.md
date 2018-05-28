@@ -43,19 +43,19 @@ React Native doesn't correctly install the native predict.io SDK so we need to f
 
 #### Android
 
-##### 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
+##### 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
 
 - Add `import io.predict.android.sdk.react.RNPredictIOPackage;` to the imports at the top of the file
 - Add `new RNPredictIOPackage()` to the list returned by the `getPackages()` method
 
-##### 2. Append the following lines to `android/settings.gradle`:
+##### 2. Append the following lines to `android/settings.gradle`:
 
  ```kotlin
  include ':react-native-predict-io'
  project(':react-native-predict-io').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-predict-io/android')
  ```
 
-##### 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`
+##### 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`
 
 ```kotlin
 compile project(':react-native-predict-io')
@@ -190,8 +190,3 @@ DeviceEventEmitter.addListener('PredictIOTripEvent', handlePredictIOEvent);
 const predictIOEventEmitter = new NativeEventEmitter(PredictIO);
 const predictIOEventSubscription = predictIOEventEmitter.addListener('PredictIOTripEvent', handlePredictIOEvent);
 ```
-
-### Known Issues
-
-* On Android, the SDK may not yet generate events correctly
-* On iOS, reloading the React Native app without recompiling may result in a crash
